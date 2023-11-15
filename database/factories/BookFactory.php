@@ -2,12 +2,13 @@
 
 namespace Database\Factories;
 
+use App\Models\Author;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Author>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Book>
  */
-class AuthorFactory extends Factory
+class BookFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,8 +18,8 @@ class AuthorFactory extends Factory
     public function definition()
     {
         return [
-            "name"=> $this->faker->name,
-            "dob"=> now()->subYears(10),
+            'title' => fake()->sentence(),
+            'author_id' => Author::factory()->create(),
         ];
     }
 }

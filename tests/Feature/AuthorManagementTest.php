@@ -17,7 +17,6 @@ class AuthorManagementTest extends TestCase
     public function an_author_can_be_created()
     {
 
-
         $this->post(route("authors.store"), [
             "name"=> "Author name",
             "dob"=> "05/10/1993",
